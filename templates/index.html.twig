@@ -1,0 +1,15 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+<h1>Bonjour</h1>
+<li>
+    <ul>1</ul>
+    <ul>2</ul>
+    <ul>3</ul>
+    <ul>4</ul>
+</li>
+
+<a href="{{path('home_page' , { 'prenom' : 'Youssef' , 'age' : 29})}}">Lien vers le controller Home</a>
+{% endblock %}
