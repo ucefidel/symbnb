@@ -5,7 +5,7 @@
 {% block body %}
 
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row align-items-center mb-5">
             <div class="col-3 text-center ">
                 <img src="{{ user.picture }}" class="avatar mb-3" alt="Avatar de {{ user.fullName }}">
                 <br>
@@ -36,7 +36,7 @@
                 {% endfor %}
             </div>
         {% else %}
-            <div class="aler aler-warning">
+            <div class="alert alert-warning">
                 <p>
                     <strong>{{ user.fullName }}</strong> n'a pas encore d'annonce sur le site !
                 </p>
