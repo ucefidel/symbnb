@@ -4,10 +4,19 @@
 
 {% block body %}
     <div class="container">
+        <h2 class="my-5"> Modification du commentaire n°{{ comment.id }}</h2>
         <div class="row">
             <div class="col">
                 {{ form_start(form)}}
-                {{ form_widget(form)}}
+
+
+                    <div class="alert alert-info">
+                            <strong>Annonce liée : </strong> {{ comment.content }} <br>
+                            <strong>Auteur : </strong> {{ comment.author.fullName }} <br>
+                            <strong>Date de création : </strong> {{ comment.createdAt | date('d/m/Y H:i') }} <br>
+                            <strong>Note donnée : </strong> {% include "partials/rating.html.twig" with { 'rating' : comment.rating } %} <br>
+                    </div>
+                    {{ form_widget(form)}}
 
                 <button type="submit" class="btn btn-primary">
                     <i class="fas fa-check"></i>

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Comment;
 use App\Form\CommentType;
+use App\Form\AdminCommentType;
 use App\Repository\CommentRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -13,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class AdminCommentController extends AbstractController
 {
     /**
-     * @Route("/admin/comment", name="admin_comment_index")
+     * @Route("/admin/comments", name="admin_comment_index")
      */
     public function index(CommentRepository $repo)
     {
@@ -32,7 +33,7 @@ class AdminCommentController extends AbstractController
      * @return Response
      */
     public function edit(ObjectManager $manager, Comment $comment, Request $request){
-        $form = $this->createForm(CommentType::class, $comment);
+        $form = $this->createForm(AdminCommentType::class, $comment);
 
         $form->handleRequest($request);
 
@@ -55,7 +56,7 @@ class AdminCommentController extends AbstractController
     /**
      * Permet de supprimer un commentaire
      * 
-     * @Route("admin/comment/{id}/delete", name="admin_comment_delete")
+     * @Route("admin/comments/{id}/delete", name="admin_comment_delete")
      *
      * @param Comment $comment
      * @param ObjectManager $manager
@@ -68,7 +69,7 @@ class AdminCommentController extends AbstractController
 
         $this->addFlash(
             'success',
-            "Votre commentaire a été supprimée avec succée"
+            "Votre commentaire de {$comment->getAuthor()->getFullName()} été supprimée avec succée"
         );
 
         return $this->redirectToRoute('admin_comment_index');
