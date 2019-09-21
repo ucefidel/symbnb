@@ -1,0 +1,79 @@
+@import url('./bootstrap.min.css');
+@import url('./bootstrap-datepicker.css');
+@import url('./fontawesome/css/all.css');
+
+div.container , div.container-fluid{
+    margin-top:20px;
+}
+div.add-title{
+    padding :2em;
+    background-position: center center;
+    background-size:cover;
+
+    h1 , p  {
+        color : white;
+        text-shadow : 3px 3px 3px  rgba(0, 0, 0, 5);
+    }
+    .btn {
+        margin-top : 2em;
+        font-size: 1.5em;
+        line-height: 1.5em;
+    }
+}
+
+
+div.add-title   
+
+
+div.carousel-caption {
+    text-shadow : 3px 3px 3px  rgba(0, 0, 0, 5);
+}
+
+
+
+.avatar {
+    max-width: 128px;
+    max-height: 128px;
+    border-radius: 50%;
+
+    &.avatar-micro {
+        max-width: 27px;
+        max-height: 27px;
+    }
+
+    &.avatar-medium {
+        max-width: 64px;
+        max-height: 64px;
+    }
+
+    &.avatar-mini {
+        max-width: 30px;
+        max-height: 30px;
+    }
+}
+
+
+
+
+
+
+
+
+.datepicker table tr td.disabled, .datepicker table tr td.disabled:hover {
+    color : firebrick !important;
+}
+
+span.rating i {
+    color: goldenrod;
+}
+
+.alert {
+
+    a { 
+        text-decoration: none;
+    }
+
+    .btn {
+        color: white;
+    }
+}
